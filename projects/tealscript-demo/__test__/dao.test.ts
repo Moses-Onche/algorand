@@ -26,4 +26,9 @@ describe('DaoClient', () => {
 
     await appClient.create.createApplication({});
   });
+
+  test('getProposal', async () => {
+    const proposalFromMethod = await appClient.getProposal({});
+    expect(proposalFromMethod.return?.valueOf()).toBe('This is a proposal.');
+  })
 });
